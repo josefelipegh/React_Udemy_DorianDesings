@@ -1,14 +1,22 @@
 import React from 'react';
 import './App.css';
 
+import { generate as id } from 'shortid';
+
 function App() {
 
-  const name = 'Felipe'
-  const age = 27
+  const numbers = [1, 2, 3, 4, 5]
+  const names = ['Felipe', 'Alba', 'Lucia']
 
   return (
-    <h1>Me llamo {name} y tengo {age} años</h1>
-  );
+    <ul>
+      { 
+        names.map( name =>{
+          return <li key={id()}>{name} {id()}</li>
+        })
+      }
+    </ul>
+  )
 }
 
 export default App;
