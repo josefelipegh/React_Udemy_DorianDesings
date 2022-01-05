@@ -2,12 +2,12 @@ import React from 'react';
 import './App.css';
 
 function App() {
+
+  const name = 'Felipe'
+  const age = 27
+
   return (
-    <>
-      <h1 className='title'>Hello World!</h1>
-      <h1>Hello World 2!</h1>
-      <img src='' alt='' />
-    </>
+    <h1>Me llamo {name} y tengo {age} años</h1>
   );
 }
 
