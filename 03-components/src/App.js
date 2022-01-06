@@ -8,9 +8,21 @@ function App() {
   return (
     <>
       <Header/>
-      <Person name="Pepe" age={27} />
-      <Person name="Carlos" age={30} />
-      <Person name="Marta" age={56} />
+      <Person 
+              age={27} 
+              birthday={new Date(1994, 4, 25)} 
+              name="Felipe" 
+      />
+      <Person 
+              age={30} 
+              birthday={new Date(1990, 1, 7)}
+              name="Carlos" 
+      />
+      <Person 
+              age={56} 
+              birthday={new Date(1965, 10, 24)}
+              name="Marta" 
+      />
     </>
   );
 }
