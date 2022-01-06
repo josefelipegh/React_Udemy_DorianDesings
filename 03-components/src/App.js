@@ -9,19 +9,31 @@ function App() {
     <>
       <Header/>
       <Person 
-              age={27} 
-              birthday={new Date(1994, 4, 25)} 
-              name="Felipe" 
+              info={
+                {
+                  age:27,
+                  birthday:new Date(1994, 4, 25),
+                  name:"Felipe"
+                }
+              }
       />
       <Person 
-              age={30} 
-              birthday={new Date(1990, 1, 7)}
-              name="Carlos" 
+              info={
+                {
+                  age:30,
+                  birthday:new Date(1990, 1, 7),
+                  name:"Carlos"
+                }
+              }
       />
       <Person 
-              age={56} 
-              birthday={new Date(1965, 10, 24)}
-              name="Marta" 
+              info={
+                {
+                  age:56,
+                  birthday:new Date(1965, 10, 24),
+                  name:"Marta"
+                }
+              }
       />
     </>
   );
