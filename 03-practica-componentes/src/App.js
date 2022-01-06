@@ -4,6 +4,9 @@ import { generate as id } from 'shortid';
 
 import './App.css';
 
+// Components
+import Card from './components/Card';
+
 function App() {
   const cards = [
     {
@@ -41,25 +44,19 @@ function App() {
   return (
     <div className='cards'>
       { 
-        cards.map( card => {
-          return <div key={card.id} className='card'>
-            <h2 className='card__title'>{card.title}</h2>
-            <img className='card__img' src={card.img} alt={card.title} />
-            <p className='card__description'>{card.description}</p>
-            <p className='card__author'>{card.author}</p>
-            <ul className='card__tags'>
-              {
-                card.tags.map( tag => {
-                  return <li key={id()} className='card__tag'>
-                    {tag}
-                  </li>
-                })
-              }
-            </ul>
-            <p className='card__views'>{card.views} views</p>
-            <p className='card__date'> </p>
-          </div>
-        })
+        cards.map( card => (
+          <Card 
+                author={card.author}
+                date={card.date}
+                img={card.img}
+                key={card.id} 
+                tags={card.tags}
+                title={card.title}
+                views={card.views}
+          >
+            {card.description}
+          </Card>
+        ))
       }
     </div>
   );
