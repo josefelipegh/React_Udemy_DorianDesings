@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Person = ({info, hobbies, bio, render}) => {
+const Person = ({info, hobbies, bio, render, children}) => {
+    console.log(children)
     if(bio) {
         return (
             <>

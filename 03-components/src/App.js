@@ -41,6 +41,8 @@ function App() {
               }
               hobbies={['video juegos', 'viajar', 'y salir']}
       />
+
+      <Person>Esto son los children de person</Person>
     </>
   );
 }
