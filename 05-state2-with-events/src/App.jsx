@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class App extends Component {
-  state = { number : 5 }
+  state = { number : this.props.number }
 
   handleIncrement = () => {
     this.setState({
@@ -31,6 +31,11 @@ class App extends Component {
       </>
     );
   }
+}
+
+// Default Props
+App.defaultProps = {
+  number:0
 }
 
 export default App;
