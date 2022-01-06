@@ -3,20 +3,20 @@ import React, { Component } from 'react';
 class App extends Component {
   state = { number : 5 }
 
-  handleIncrementClick = () => {
-    this.setState( {
+  handleIncrement = () => {
+    this.setState({
       number: this.state.number + 1
     })
   }
 
-  handleDecrementClick = () => {
-    this.setState( {
+  handleDecrement = () => {
+    this.setState({
       number: this.state.number - 1
     })
   }
 
-  handleResetClick = () => {
-    this.setState( {
+  handleReset = () => {
+    this.setState({
       number: 0
     })
   }
@@ -25,9 +25,9 @@ class App extends Component {
     return (
       <>
         <h1>Numbe: { this.state.number }</h1>
-        <button onClick={this.handleIncrementClick}>Increment</button>
-        <button onClick={this.handleDecrementClick}>Decrement</button>
-        <button onClick={this.handleResetClick}>Reset</button>
+        <button onClick={this.handleIncrement}>Increment</button>
+        <button onClick={this.handleDecrement}>Decrement</button>
+        <button onClick={this.handleReset}>Reset</button>
       </>
     );
   }
