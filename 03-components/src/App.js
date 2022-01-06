@@ -2,10 +2,16 @@ import './App.css';
 
 // Components
 import Header from './components/Header';
+import Person from './components/Person';
 
 function App() {
   return (
-    <Header/>
+    <>
+      <Header/>
+      <Person name="Pepe" age={27} />
+      <Person name="Carlos" age={30} />
+      <Person name="Marta" age={56} />
+    </>
   );
 }
 
