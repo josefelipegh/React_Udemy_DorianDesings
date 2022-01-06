@@ -16,6 +16,9 @@ function App() {
                   name:"Felipe"
                 }
               }
+              hobbies={['video juegos', 'viajar', 'y salir']}
+              bio={<p>Lorem ipsum dolor...</p>}
+              render
       />
       <Person 
               info={
@@ -25,6 +28,8 @@ function App() {
                   name:"Carlos"
                 }
               }
+              hobbies={['video juegos', 'viajar', 'y salir']}
+              bio={<p>Lorem ipsum dolor...</p>}
       />
       <Person 
               info={
@@ -34,6 +39,7 @@ function App() {
                   name:"Marta"
                 }
               }
+              hobbies={['video juegos', 'viajar', 'y salir']}
       />
     </>
   );

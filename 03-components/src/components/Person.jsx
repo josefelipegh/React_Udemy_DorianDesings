@@ -1,9 +1,16 @@
 import React from 'react';
 
-const Person = ({info}) => {
-    return (
-        <p>Soy {info.name} y tengo {info.age} años. Naci en {info.birthday.getFullYear()}</p>
-    )
+const Person = ({info, hobbies, bio, render}) => {
+    if(bio) {
+        return (
+            <>
+                <p>Soy {info.name} y tengo {info.age} años. Naci en {info.birthday.getFullYear()}. Mis hobbies son {hobbies.join(' ')}</p>
+                {bio}
+            </>
+        )
+    }else {
+        return <p>No hay persona</p>
+    }
 }
 
 export default Person;
