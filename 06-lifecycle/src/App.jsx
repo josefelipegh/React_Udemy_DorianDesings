@@ -39,6 +39,11 @@ class App extends Component {
   handlerMessage = () => {
     this.setState({message: 'Lifecycle Cambiado'})
   }
+  
+  handlerUpdate = () => {
+    // USAR LAS MENORES VECES POSIBLES, NUNCA SI ES POSIBLE
+    this.forceUpdate()
+  }
 
   async componentDidUpdate(prevProps, prevState) {
     // console.log(prevState.id, this.state.id)
@@ -73,6 +78,7 @@ class App extends Component {
               <>
                 <button onClick={this.handlerId}>Next Id</button>
                 <button onClick={this.handlerMessage}>Change Header</button>
+                <button onClick={this.handlerUpdate}>Force Update</button>
                 <h2>Post con id: {this.state.id}</h2>
                 <h2>{post.title}</h2>
                 <p>{post.body}</p>
