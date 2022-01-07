@@ -7,7 +7,10 @@ class App extends Component {
   
   constructor(props) {
     super(props)
-    this.state = { posts: [] }
+    this.state = { 
+      id: 1,  
+      post: {} 
+    }
     //Bindear eventos
     console.log('CONSTRUCTOR')
   }
@@ -17,36 +20,56 @@ class App extends Component {
     // fetch('https://jsonplaceholder.typicode.com/posts')
     // .then(res=>res.json())
     // .then(data => console.log(data))
-
-    const res = await fetch('https://jsonplaceholder.typicode.com/posts')
+    const {id} = this.state
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
     const data = await res.json()
-    console.log(data)
 
     // ACTUALIZACION DEL ESTADO
-    this.setState( {posts: data} )
+    this.setState( {post: data} )
 
     // ASIGNACION DE EVENTOS
     window.addEventListener('scroll', () => console.log('scroll'))
   }
 
-  render() {
-    console.log('RENDER')
+  handlerId = () => {
+    this.setState({id: this.state.id + 1})
+  }
 
+  async componentDidUpdate(prevProps, prevState) {
+    console.log(prevState.id, this.state.id)
+    if(prevState.id !== this.state.id){
+      const { id } = this.state
+      const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
+      const data = await res.json()
+      // ACTUALIZACION DEL ESTADO
+      this.setState( {post: data} )
+    }
+  }
+
+  render() {
     // HACER UN SETSTATE EN RENDERGENERA UN BUCLE INFINITO
     // this.setState({ number: 23 })
-    const { posts } = this.state
+    const { post } = this.state
     if(true) {
       return (
         <>
           <Header title="Lifecycle"/>
           <div>
-            {
+            {/* {
               posts.map( post => (
                 <Fragment key={post.id}>
                   <h2>{post.title}</h2>
                   <p>{post.body}</p>
                 </Fragment>
               ))
+            } */}
+            {
+              <>
+              <button onClick={this.handlerId}>Next Id</button>
+                <h2>Post con id: {this.state.id}</h2>
+                <h2>{post.title}</h2>
+                <p>{post.body}</p>
+              </>
             }
           </div>
         </>
