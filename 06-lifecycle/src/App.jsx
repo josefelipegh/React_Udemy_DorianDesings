@@ -9,7 +9,8 @@ class App extends Component {
     super(props)
     this.state = { 
       id: 1,  
-      post: {} 
+      post: {},
+      message: 'Lifecycle'
     }
     //Bindear eventos
     console.log('CONSTRUCTOR')
@@ -35,8 +36,13 @@ class App extends Component {
     this.setState({id: this.state.id + 1})
   }
 
+  handlerMessage = () => {
+    this.setState({message: 'Lifecycle Cambiado'})
+  }
+
   async componentDidUpdate(prevProps, prevState) {
-    console.log(prevState.id, this.state.id)
+    // console.log(prevState.id, this.state.id)
+    console.log('Update')
     if(prevState.id !== this.state.id){
       const { id } = this.state
       const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`)
@@ -53,7 +59,7 @@ class App extends Component {
     if(true) {
       return (
         <>
-          <Header title="Lifecycle"/>
+          <Header title={this.state.message}/>
           <div>
             {/* {
               posts.map( post => (
@@ -65,7 +71,8 @@ class App extends Component {
             } */}
             {
               <>
-              <button onClick={this.handlerId}>Next Id</button>
+                <button onClick={this.handlerId}>Next Id</button>
+                <button onClick={this.handlerMessage}>Change Header</button>
                 <h2>Post con id: {this.state.id}</h2>
                 <h2>{post.title}</h2>
                 <p>{post.body}</p>
