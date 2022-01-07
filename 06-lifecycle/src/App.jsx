@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 // Components
 import Header from './components/Header';
+import Clock from './components/Clock';
 
 class App extends Component {
   
@@ -10,7 +11,8 @@ class App extends Component {
     this.state = { 
       id: 1,  
       post: {},
-      message: 'Lifecycle'
+      message: 'Lifecycle',
+      showClock: true
     }
     //Bindear eventos
     console.log('CONSTRUCTOR')
@@ -45,6 +47,10 @@ class App extends Component {
     this.forceUpdate()
   }
 
+  handlerClock = () => {
+    this.setState({showClock: !this.state.showClock})
+  }
+
   async componentDidUpdate(prevProps, prevState) {
     // console.log(prevState.id, this.state.id)
     console.log('Update')
@@ -65,6 +71,7 @@ class App extends Component {
       return (
         <>
           <Header title={this.state.message}/>
+          {this.state.showClock && <Clock />}
           <div>
             {/* {
               posts.map( post => (
@@ -79,6 +86,14 @@ class App extends Component {
                 <button onClick={this.handlerId}>Next Id</button>
                 <button onClick={this.handlerMessage}>Change Header</button>
                 <button onClick={this.handlerUpdate}>Force Update</button>
+                <button onClick={this.handlerClock}>
+                  {
+                    this.state.showClock ?
+                    "Hide Clock"
+                    :
+                    "Show Clock"
+                  }
+                </button>
                 <h2>Post con id: {this.state.id}</h2>
                 <h2>{post.title}</h2>
                 <p>{post.body}</p>
