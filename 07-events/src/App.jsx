@@ -2,21 +2,17 @@ import React, { Component } from 'react';
 
 class App extends Component {
 
-  // handleClick = (e) => {
-  //   console.log(e.target)
-  // }
-
-  handleClick = (e, msg) => {
+  handleClick (msg, msg2, e) {
+    console.log(e)
     console.log(msg)
-    console.log(e.target)
+    console.log(msg2)
   }
 
   render() {
     return (
       <>
         <h1>Events</h1>
-        {/* <button onClick={this.handleClick}>Click me!</button> */}
-        <button onClick={(e) => this.handleClick(e, 'Hello')}>Click me!</button>
+        <button onClick={this.handleClick.bind(this, 'hello', 'world')}>Click me!</button>
       </>
     )
   }
