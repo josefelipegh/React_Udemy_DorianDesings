@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 
+import Button from './components/Button'
 class App extends Component {
 
-  handleClick (msg, msg2, e) {
+  handleClick = (e) => {
     console.log(e)
-    console.log(msg)
-    console.log(msg2)
   }
 
   render() {
     return (
       <>
         <h1>Events</h1>
-        <button onClick={this.handleClick.bind(this, 'hello', 'world')}>Click me!</button>
+        {/* <button onClick={this.handleClick}>Click me!</button> */}
+        <Button text="Click me" onEventClick={this.handleClick}/>
       </>
     )
   }
