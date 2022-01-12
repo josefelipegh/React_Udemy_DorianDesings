@@ -12,7 +12,7 @@ class App extends Component {
       <>
         <h1>Events</h1>
         {/* <button onClick={this.handleClick}>Click me!</button> */}
-        <Button text="Click me" onEventClick={this.handleClick}/>
+        <Button text="Click me"/>
       </>
     )
   }
