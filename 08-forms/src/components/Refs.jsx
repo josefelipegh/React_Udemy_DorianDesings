@@ -1,16 +1,22 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 
 class Refs extends Component {
-    
+
+    inputText = createRef()
+
+    componentDidMount() {
+        this.handleFocus();
+    }
+
     handleFocus = () => {
-        document.getElementById('input').focus();
+        console.log(this.inputText)
+        this.inputText.current.focus();
     }
 
     render() { 
         return (
             <>
-                <input type="text" id='input' />
-                <button onClick={this.handleFocus}>Focus</button>
+                <input type="text" ref={this.inputText} />
             </>
         );
     }
