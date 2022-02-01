@@ -5,7 +5,9 @@ class Form extends Component {
     
     state = {
         name: '',
-        gender: ''
+        gender: 'man',
+        language: 'es',
+        terms: false
     }
 
     handleSubmit = (e) => {
@@ -17,6 +19,12 @@ class Form extends Component {
         console.log(e.target.name)
         this.setState({
             [e.target.name] : e.target.value
+        })
+    }
+
+    handleTerms = () => {
+        this.setState({
+            terms: !this.state.terms
         })
     }
 
@@ -38,6 +46,7 @@ class Form extends Component {
                     <div className="form__field">
                         <label className="form__label form__label--radio" htmlFor="man">Man</label>
                         <input 
+                                defaultChecked
                                 className="form__input" 
                                 id="man" 
                                 name="gender"
@@ -68,16 +77,26 @@ class Form extends Component {
                     </div>
                     <div className="form__field">
                         <label className="form__label" htmlFor="languaje">Language</label>
-                        <select name="language" id="language">
+                        <select name="language" id="language" onChange={this.handleChange}>
                             <option value="es">Spanish</option>
                             <option value="en">English</option>
                         </select>
                     </div>
                     <div className="form__field">
                         <label className="form__label" htmlFor="terms">Terms and conditions</label>
-                        <input className="form__input" type="checkbox" id="other" name="gender" />
+                        <input 
+                                className="form__input" 
+                                id="other" 
+                                name="terms" 
+                                onChange={this.handleTerms}
+                                type="checkbox" 
+                        />
                     </div>
-                    <input className="form__submit" type="submit" value="send" />
+                    <input 
+                            disabled={!this.state.terms}
+                            className="form__submit" 
+                            type="submit" 
+                            value="send" />
                     <p>{JSON.stringify(this.state)}</p>
                 </form >
             </>
