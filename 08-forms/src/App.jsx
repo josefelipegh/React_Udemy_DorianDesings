@@ -1,11 +1,11 @@
-import './App.css';
+import React, { Component } from 'react';
+// import Form from './components/Form';
+import Refs from './components/Refs';
 
-function App() {
-  return (
-    <h1>
-     Hola
-    </h1>
-  );
+class App extends Component{
+  render() {
+    return <Refs/>
+  }
 }
 
 export default App;
