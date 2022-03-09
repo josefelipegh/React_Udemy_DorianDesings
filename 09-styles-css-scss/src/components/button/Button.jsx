@@ -1,9 +1,5 @@
+import './button.css';
 
-const styles  = {
-    backgroundColor : 'royalblue' , 
-    color: '#fff'
-}
+const Button = () => <button className='button'>Click me!</button>;
 
-const Button = () => <button style={styles}>Click me!</button>;
-
-export default Button;
+export default Button;  
