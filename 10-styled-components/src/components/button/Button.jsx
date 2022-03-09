@@ -1,20 +1,11 @@
 import styled from 'styled-components';
 
-const color = 'royalblue';
-
-const padding = '2rem';
-
-const StyledButton = styled.button`
-    background-color: ${color};
+const Button = styled.button`
+    background-color: ${({bgcolor}) => bgcolor};
+    border: none;
     color: #fff;
-    padding: ${padding};
-
-    &:hover {
-        background-color : red;
-        color: ${color};
-    }
+    outline: none;
+    padding: .5rem .8rem;
 `
-
-const Button = () => <StyledButton>Click me!</StyledButton>
 
 export default Button;

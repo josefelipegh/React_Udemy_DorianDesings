@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
+import Button from '../button/Button';
 
 const getBorder = (width, type, color) => {
     return `${width} ${type} ${color}`
@@ -14,7 +15,11 @@ const TitleStyled = styled.h1`
 const Title = () => {
 
     return (
-    <TitleStyled>Styled Components</TitleStyled>
+        <>
+            <TitleStyled>Styled Components</TitleStyled>
+            <Button bgcolor='red'>Click Me!</Button>
+            <Button bgcolor='royalblue'>Click Me!</Button>
+        </>
     );
 }
 
