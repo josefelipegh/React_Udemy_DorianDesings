@@ -1,7 +1,8 @@
+import Button from "./components/button/Button";
 
 function App() {
   return (
-    <h1>hola</h1>
+    <Button/>
   );
 }
 
