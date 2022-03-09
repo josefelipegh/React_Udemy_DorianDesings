@@ -7,22 +7,22 @@ const Button = styled.button`
     margin-right: 1rem;
     outline: none;
     padding: .5rem .8rem;
-    background-color: royalblue;
+    background-color: ${({ theme }) => theme.primary};
 
     ${({danger, ghost}) => danger && ghost && css`
         background-color: transparent;
-        color: red;
-        border: 1px solid red;
+        color: ${({ theme }) => theme.danger};
+        border: 1px solid ${({ theme }) => theme.danger};
     `}
 
     ${({danger, ghost}) => danger && !ghost && css`
-        background-color: red;
+        background-color: ${({ theme }) => theme.danger};
     `}
 
     ${({danger, ghost}) => !danger && ghost && css`
         background-color: transparent;
-        color: royalblue;
-        border: 1px solid royalblue;
+        color: ${({ theme }) => theme.primary};
+        border: 1px solid ${({ theme }) => theme.primary};
     `}
 `
 
