@@ -17,8 +17,10 @@ const Title = () => {
     return (
         <>
             <TitleStyled>Styled Components</TitleStyled>
-            <Button danger>Click Me!</Button>
             <Button>Click Me!</Button>
+            <Button danger>Click Me!</Button>
+            <Button ghost>Ghost Me!</Button>
+            <Button danger ghost>Ghost Me!</Button>
         </>
     );
 }
