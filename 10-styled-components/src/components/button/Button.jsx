@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-    background-color: ${({bgcolor}) => bgcolor};
+    background-color: ${({danger}) => danger ? 'red' : 'royalblue'};
     border: none;
     color: #fff;
     outline: none;

@@ -17,8 +17,8 @@ const Title = () => {
     return (
         <>
             <TitleStyled>Styled Components</TitleStyled>
-            <Button bgcolor='red'>Click Me!</Button>
-            <Button bgcolor='royalblue'>Click Me!</Button>
+            <Button danger>Click Me!</Button>
+            <Button>Click Me!</Button>
         </>
     );
 }
