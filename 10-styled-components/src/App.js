@@ -1,8 +1,11 @@
-import Button from "./components/button/Button";
+// import Button from "./components/button/Button";
+
+import Title from "./components/title/Title";
 
 function App() {
   return (
-    <Button/>
+    <Title/>
+    // <Button/>
   );
 }
 
