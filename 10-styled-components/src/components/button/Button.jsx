@@ -1,4 +1,16 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const rotate = keyframes`
+    0% {
+        transform: rotate(0)
+    }
+    50% {
+        transform: rotate(180deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+`
 
 const Button = styled.button`
     border: none;
@@ -9,6 +21,7 @@ const Button = styled.button`
     padding: .5rem .8rem;
     background-color: ${({ theme }) => theme.primary};
     transition: color, background-color .5s;
+    animation: ${rotate} 1.5s;
 
     &:hover {
         color: #fff;
