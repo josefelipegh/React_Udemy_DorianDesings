@@ -8,6 +8,12 @@ const Button = styled.button`
     outline: none;
     padding: .5rem .8rem;
     background-color: ${({ theme }) => theme.primary};
+    transition: color, background-color .5s;
+
+    &:hover {
+        color: #fff;
+        background-color: blue;
+    }
 
     ${({danger, ghost}) => danger && ghost && css`
         background-color: transparent;
