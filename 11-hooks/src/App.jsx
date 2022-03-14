@@ -1,37 +1,25 @@
-import React, { useState } from 'react';
-import Form from './components/Form';
+import React, { useState, useEffect } from 'react';
 
 const App = () => {
 
-  // const [number, setNumber] = useState(10);
-  // const [text, setText] = useState('')
+  const [date, setDate] = useState(new Date().toLocaleTimeString())
+  
+  
+  useEffect(()=>{
+    // componentDidMount
+    console.log('Mounted')
 
-  // const handleIncrement = () => {
-  //   setNumber(number + 1)
-  // }
+    // componentDidUpdate
+    const time = setInterval(() => setDate(new Date().toLocaleTimeString()), 1000);
 
-  // const handleDecrement = () => {
-  //   setNumber(number - 1)
-  // }
-
-  // const handleReset = () => {
-  //   setNumber(0)
-  // }
-
-  // const handleInput = (e) => {
-  //   setText(e.target.value)
-  // }
+    // componentWillUnmount
+    return () => clearInterval(time)
+  })
 
   return (
-    <>
-      {/* <h1>Numbe: { number }</h1>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Decrement</button>
-      <button onClick={handleReset}>Reset</button>
-      <p>Contenido del input {text}</p>
-      <input type="text" onChange={handleInput} /> */}
-      <Form />
-    </>
+    <h1>
+      {date}
+    </h1>
   );
 }
 
