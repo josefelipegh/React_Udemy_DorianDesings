@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-const App = ({num}) => {
+const App = ({initialNumber = 23}) => {
 
-  const [number, setNumber] = useState(num);
+  const [number = initialNumber, setNumber] = useState(10);
 
   const handleIncrement = () => {
     setNumber(number + 1)
@@ -24,11 +24,6 @@ const App = ({num}) => {
       <button onClick={handleReset}>Reset</button>
     </>
   );
-}
-
-// Default Props
-App.defaultProps = {
-  num:0
 }
 
 export default App;
