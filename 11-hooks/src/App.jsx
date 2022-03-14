@@ -2,24 +2,23 @@ import React, { useState, useEffect } from 'react';
 
 const App = () => {
 
-  const [date, setDate] = useState(new Date().toLocaleTimeString())
-  
-  
-  useEffect(()=>{
-    // componentDidMount
-    console.log('Mounted')
+  const [counter1, setCounter1] = useState(0)
+  const [counter2, setCounter2] = useState(0)
 
-    // componentDidUpdate
-    const time = setInterval(() => setDate(new Date().toLocaleTimeString()), 1000);
+  const handleCounter1 = () => setCounter1(counter1 + 1)
+  const handleCounter2 = () => setCounter2(counter2 + 1)
 
-    // componentWillUnmount
-    return () => clearInterval(time)
-  })
+  useEffect(() => {
+    console.log('USE EFFECT')
+  }, [counter1, counter2]);
 
   return (
-    <h1>
-      {date}
-    </h1>
+    <>
+      <h2>Counter 1: {counter1}</h2>
+      <h2>Counter 2: {counter2}</h2>
+      <button onClick={handleCounter1}>Counter 1</button>
+      <button onClick={handleCounter2}>Counter 2</button>
+    </>
   );
 }
 
